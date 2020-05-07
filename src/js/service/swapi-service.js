@@ -5,6 +5,10 @@ export default class SwapiService {
 
         this.getResource = this.getResource.bind(this);
 
+        this.getAllPeople = this.getAllPeople.bind(this);
+        this.getPerson = this.getPerson.bind(this);
+        this.getPersonImage = this.getPersonImage.bind(this);
+
         this.transformPeople = this.transformPeople.bind(this);
         this.transformPlanet = this.transformPlanet.bind(this);
         this.transformStarship = this.transformStarship.bind(this);
@@ -19,6 +23,20 @@ export default class SwapiService {
         }
 
         return res.json();
+    }
+
+    async getAllPeople() {
+        const { results } = await this.getResource('people');
+        return results.map(this.transformPeople);
+    }
+
+    async getPerson(id) {
+        const res = await this.getResource(`people/${id}`);
+        return this.transformPeople(res);
+    }
+
+    getPersonImage(id) {
+        return `${this.imageUrl}/characters/${id}.jpg`;
     }
 
     extractId(item) {
