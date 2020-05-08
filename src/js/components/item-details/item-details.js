@@ -4,18 +4,7 @@ import PropTypes from 'prop-types';
 import './item-details.scss';
 
 const propTypesItemDetails = {
-    item: PropTypes.shape({
-        // person
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-
-        birthYear: PropTypes.string,
-        eyeColor: PropTypes.string,
-        gender: PropTypes.string,
-        hairColor: PropTypes.string,
-        height: PropTypes.string,
-        mass: PropTypes.string,
-    }).isRequired,
+    item: PropTypes.objectOf(PropTypes.string).isRequired,
     getImage: PropTypes.func.isRequired,
     children: PropTypes.node,
 };
@@ -27,18 +16,7 @@ const defaultPropsItemDetails = {
 const propTypesItemDetailsChildren = {
     label: PropTypes.string.isRequired,
 
-    item: PropTypes.shape({
-        // person
-        id: PropTypes.string,
-        name: PropTypes.string,
-
-        birthYear: PropTypes.string,
-        eyeColor: PropTypes.string,
-        gender: PropTypes.string,
-        hairColor: PropTypes.string,
-        height: PropTypes.string,
-        mass: PropTypes.string,
-    }),
+    item: PropTypes.objectOf(PropTypes.string),
     field: PropTypes.string,
 };
 

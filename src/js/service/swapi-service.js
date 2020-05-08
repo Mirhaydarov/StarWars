@@ -54,9 +54,6 @@ export default class SwapiService {
             eyeColor: person.eye_color,
             height: person.height,
             mass: person.mass,
-            homeworld: person.homeworld,
-            starships: person.starships,
-            films: person.films,
         };
     }
 

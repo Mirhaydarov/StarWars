@@ -4,21 +4,8 @@ import PropTypes from 'prop-types';
 import './item-list.scss';
 
 const propTypes = {
-    data: PropTypes.arrayOf(
-        PropTypes.shape({
-            // people
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-
-            birthYear: PropTypes.string,
-            eyeColor: PropTypes.string,
-            gender: PropTypes.string,
-            hairColor: PropTypes.string,
-            height: PropTypes.string,
-            homeworld: PropTypes.string,
-            mass: PropTypes.string,
-        })
-    ).isRequired,
+    data: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string))
+        .isRequired,
     updateDetails: PropTypes.func.isRequired,
     children: PropTypes.func,
 };
