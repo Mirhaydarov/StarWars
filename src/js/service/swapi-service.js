@@ -8,9 +8,14 @@ export default class SwapiService {
         this.getAllPeople = this.getAllPeople.bind(this);
         this.getPerson = this.getPerson.bind(this);
         this.getPersonImage = this.getPersonImage.bind(this);
+
         this.getAllPlanets = this.getAllPlanets.bind(this);
         this.getPlanet = this.getPlanet.bind(this);
         this.getPlanetImage = this.getPlanetImage.bind(this);
+
+        this.getAllStarships = this.getAllStarships.bind(this);
+        this.getStarship = this.getStarship.bind(this);
+        this.getStarshipImage = this.getStarshipImage.bind(this);
 
         this.transformPeople = this.transformPeople.bind(this);
         this.transformPlanet = this.transformPlanet.bind(this);
@@ -54,6 +59,20 @@ export default class SwapiService {
 
     getPlanetImage(id) {
         return `${this.imageUrl}/planets/${id}.jpg`;
+    }
+
+    async getAllStarships() {
+        const { results } = await this.getResource('starships');
+        return results.map(this.transformStarship);
+    }
+
+    async getStarship(id) {
+        const res = await this.getResource(`starships/${id}`);
+        return this.transformStarship(res);
+    }
+
+    getStarshipImage(id) {
+        return `${this.imageUrl}/starships/${id}.jpg`;
     }
 
     extractId(item) {
