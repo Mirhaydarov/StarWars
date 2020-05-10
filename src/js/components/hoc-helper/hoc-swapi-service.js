@@ -17,14 +17,13 @@ const hocSwapiService = (mapService) => (Wrapped) => {
         const { itemId, updateDetails } = props;
         const context = useContext(SwapiProvider);
         const serviceProps = mapService(context);
-        const { getData, getImage } = serviceProps;
+        const { getData } = serviceProps;
 
         return (
             <Wrapped
                 itemId={itemId}
                 updateDetails={updateDetails}
                 getData={getData}
-                getImage={getImage}
             />
         );
     };

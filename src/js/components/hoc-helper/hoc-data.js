@@ -28,7 +28,7 @@ function hocData(Wrapped) {
 
         useEffect(() => {
             updateData();
-        }, []);
+        }, [getData]);
 
         if (loading) {
             return <Spinner />;
