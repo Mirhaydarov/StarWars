@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import Spinner from '../spinner';
+
 function hocData(Wrapped) {
     return function hocDataWrap(props) {
         hocDataWrap.propTypes = {
@@ -29,7 +31,7 @@ function hocData(Wrapped) {
         }, []);
 
         if (loading) {
-            return <p>Loading...</p>;
+            return <Spinner />;
         }
 
         if (hasError) {

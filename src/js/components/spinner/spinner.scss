@@ -1,0 +1,103 @@
+@keyframes ldio-4wd8cad69vc {
+    0% { transform: rotate(0) }
+    100% { transform: rotate(360deg) }
+}
+
+.ldio-4wd8cad69vc div { box-sizing: border-box!important }
+.ldio-4wd8cad69vc > div {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 140px;
+    height: 140px;
+    animation: ldio-4wd8cad69vc 0.9803921568627451s linear infinite;
+    border: 12px solid #000;
+    border-color: #8985ff transparent #8985ff transparent;
+    border-radius: 50%;
+}
+
+.ldio-4wd8cad69vc > div:nth-child(2), .ldio-4wd8cad69vc > div:nth-child(4) {
+    top: 44px;
+    left: 44px;
+    width: 112px;
+    height: 112px;
+    animation: ldio-4wd8cad69vc 0.9803921568627451s linear infinite reverse;
+}
+
+.ldio-4wd8cad69vc > div:nth-child(2) {
+  border-color: transparent #ff4d4d transparent #ff4d4d
+}
+
+.ldio-4wd8cad69vc > div:nth-child(3) { border-color: transparent }
+.ldio-4wd8cad69vc > div:nth-child(3) div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+}
+
+.ldio-4wd8cad69vc > div:nth-child(3) div:before, .ldio-4wd8cad69vc > div:nth-child(3) div:after {
+    position: absolute;
+    top: -12px;
+    left: 52px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border-radius: 50%;
+    background: #8985ff;
+    box-shadow: 0 128px 0 0 #8985ff;
+}
+
+.ldio-4wd8cad69vc > div:nth-child(3) div:after {
+    top: 52px;
+    left: -12px;
+    box-shadow: 128px 0 0 0 #8985ff;
+}
+
+.ldio-4wd8cad69vc > div:nth-child(4) { border-color: transparent; }
+.ldio-4wd8cad69vc > div:nth-child(4) div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+}
+
+.ldio-4wd8cad69vc > div:nth-child(4) div:before, .ldio-4wd8cad69vc > div:nth-child(4) div:after {
+    position: absolute;
+    top: -12px;
+    left: 38px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border-radius: 50%;
+    background: #ff4d4d;
+    box-shadow: 0 100px 0 0 #ff4d4d;
+}
+
+.ldio-4wd8cad69vc > div:nth-child(4) div:after {
+    top: 38px;
+    left: -12px;
+    box-shadow: 100px 0 0 0 #ff4d4d;
+}
+
+.loadingio-spinner-double-ring-5suqluy2beo {
+    display: block;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: transparent;
+}
+
+.ldio-4wd8cad69vc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0) scale(1);
+    transform-origin: 0 0;
+    backface-visibility: hidden;
+}
+
+.ldio-4wd8cad69vc div { box-sizing: content-box; }
