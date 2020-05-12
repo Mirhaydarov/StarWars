@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import Row from '../row';
 import {
@@ -6,19 +8,31 @@ import {
     SwPlanetsDetails,
 } from '../star-wars-components';
 
-function PlanetsPage() {
-    const [itemId, setItemId] = useState('9');
+const propTypes = {
+    match: PropTypes.shape({
+        params: PropTypes.objectOf(PropTypes.string),
+    }).isRequired,
 
-    function updateDetails(id) {
-        return setItemId(id);
+    history: PropTypes.shape({
+        push: PropTypes.func,
+    }).isRequired,
+};
+
+function PlanetsPage({ match: { params }, history }) {
+    const { id: urlId = 9 } = params;
+
+    function updateDetails(listId) {
+        return history.push(listId);
     }
 
     return (
         <Row
             left={<SwPlanetsList updateDetails={updateDetails} />}
-            right={<SwPlanetsDetails itemId={itemId} />}
+            right={<SwPlanetsDetails itemId={urlId} />}
         />
     );
 }
 
-export default PlanetsPage;
+PlanetsPage.propTypes = propTypes;
+
+export default withRouter(PlanetsPage);
