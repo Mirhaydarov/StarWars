@@ -5,7 +5,7 @@ import './item-details.scss';
 
 const propTypesItemDetails = {
     item: PropTypes.objectOf(PropTypes.string).isRequired,
-    getImage: PropTypes.func.isRequired,
+    image: PropTypes.string.isRequired,
     children: PropTypes.node,
 };
 
@@ -35,18 +35,14 @@ function ItemDetailsChildren({ item, field, label }) {
 }
 
 function ItemDetails(props) {
-    const { item, getImage, children } = props;
-    const { id, name } = item;
-
-    if (!name) {
-        return <p>Please selected item from a list</p>;
-    }
+    const { item, image, children } = props;
+    const { name } = item;
 
     return (
         <div className='item-details'>
             <img
                 className='item-details__img'
-                src={getImage(id)}
+                src={image}
                 alt={name}
             />
             <div className='item-details__box'>
