@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import Row from '../row';
 import {
@@ -6,19 +8,31 @@ import {
     SwVehiclesDetails,
 } from '../star-wars-components';
 
-function VehiclesPage() {
-    const [itemId, setItemId] = useState('4');
+const propTypes = {
+    match: PropTypes.shape({
+        params: PropTypes.objectOf(PropTypes.string),
+    }).isRequired,
 
-    function updateDetails(id) {
-        return setItemId(id);
+    history: PropTypes.shape({
+        push: PropTypes.func,
+    }).isRequired,
+};
+
+function VehiclesPage({ match: { params }, history }) {
+    const { id: urlId = 4 } = params;
+
+    function updateDetails(listId) {
+        return history.push(listId);
     }
 
     return (
         <Row
             left={<SwVehiclesList updateDetails={updateDetails} />}
-            right={<SwVehiclesDetails itemId={itemId} />}
+            right={<SwVehiclesDetails itemId={urlId} />}
         />
     );
 }
 
-export default VehiclesPage;
+VehiclesPage.propTypes = propTypes;
+
+export default withRouter(VehiclesPage);
