@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import Row from '../row';
 import {
@@ -6,19 +8,31 @@ import {
     SwPersonDetails,
 } from '../star-wars-components';
 
-function PeoplePage() {
-    const [itemId, setItemId] = useState('1');
+const propTypes = {
+    match: PropTypes.shape({
+        params: PropTypes.objectOf(PropTypes.string),
+    }).isRequired,
 
-    function updateDetails(id) {
-        return setItemId(id);
+    history: PropTypes.shape({
+        push: PropTypes.func,
+    }).isRequired,
+};
+
+function PeoplePage({ match: { params }, history }) {
+    const { id: urlId = 1 } = params;
+
+    function updateDetails(listId) {
+        return history.push(listId);
     }
 
     return (
         <Row
             left={<SwPersonList updateDetails={updateDetails} />}
-            right={<SwPersonDetails itemId={itemId} />}
+            right={<SwPersonDetails itemId={urlId} />}
         />
     );
 }
 
-export default PeoplePage;
+PeoplePage.propTypes = propTypes;
+
+export default withRouter(PeoplePage);
