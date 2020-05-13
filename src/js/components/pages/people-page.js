@@ -19,7 +19,7 @@ const propTypes = {
 };
 
 function PeoplePage({ match: { params }, history }) {
-    const { id: urlId = 1 } = params;
+    const { id: urlId = '1' } = params;
 
     function updateDetails(listId) {
         return history.push(listId);

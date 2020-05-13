@@ -19,7 +19,7 @@ const propTypes = {
 };
 
 function VehiclesPage({ match: { params }, history }) {
-    const { id: urlId = 4 } = params;
+    const { id: urlId = '4' } = params;
 
     function updateDetails(listId) {
         return history.push(listId);

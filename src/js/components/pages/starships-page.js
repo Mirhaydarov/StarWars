@@ -19,7 +19,7 @@ const propTypes = {
 };
 
 function StarshipsPage({ match: { params }, history }) {
-    const { id: urlId = 9 } = params;
+    const { id: urlId = '9' } = params;
 
     function updateDetails(listId) {
         return history.push(listId);
