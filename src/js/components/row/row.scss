@@ -1,5 +1,39 @@
+@import '../../../styles/helpers/media';
+
 .row-wrap {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    grid-gap: 120px;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 15px 40px;
+    padding: 0 15px;
+
+    @include media-768 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-576 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'right' 'left';
+    }
+
+    &__left {
+        @include media-576 {
+            grid-area: left;
+            padding: 0 30px;
+        }
+
+        @include media-custom(400px) {
+            padding: 5px;
+        }
+    }
+
+    &__right {
+        @include media-576 {
+            grid-area: right;
+            padding: 0 30px;
+        }
+
+        @include media-custom(400px) {
+            padding: 5px;
+        }
+    }
 }

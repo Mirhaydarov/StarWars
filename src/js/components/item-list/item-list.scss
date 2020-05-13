@@ -24,7 +24,8 @@
         font-size: .8rem;
 
         &:hover, &:focus {
-            border-bottom: 1px solid #ffffff;
+            color: lighten(red, 15);
+            border-bottom: 1px solid lighten(red, 15);
         }
     }
 }
