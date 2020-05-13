@@ -22,10 +22,10 @@ function Header() {
     });
     return (
         <header className='header'>
-            <div className='wrap header__wrap'>
+            <div className='wrap'>
                 <div className='header__grid'>
                     <Link className='logo' to='/'>
-                        Swapi Api
+                        Swapi&nbsp;Api
                     </Link>
                     <nav className='header__nav'>
                         <ul className='header__list'>{elements}</ul>

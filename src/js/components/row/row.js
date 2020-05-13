@@ -12,8 +12,8 @@ function Row({ left, right }) {
     return (
         <div className='wrap'>
             <section className='row-wrap'>
-                <article>{left}</article>
-                <article>{right}</article>
+                <article className='row-wrap__left' >{left}</article>
+                <article className='row-wrap__right' >{right}</article>
             </section>
         </div>
     );
