@@ -1,0 +1,11 @@
+.vscode/
+.history
+bower_components/
+node_modules/
+build/
+.config/
+package-lock.json
+.sass-cache
+*.css.map
+.DS_Store
+Thumbs.db

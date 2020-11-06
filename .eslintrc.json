@@ -1,0 +1,43 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:jsx-a11y/recommended",
+        "plugin:sonarjs/recommended",
+        "plugin:promise/recommended",
+        "plugin:prettier/recommended",
+        "prettier/react"
+    ],
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "jest": true,
+        "node": true
+    },
+    "plugins": ["sonarjs", "promise"],
+    "rules": {
+        "jsx-a11y/href-no-hash": ["off"],
+        "react/jsx-filename-extension": [
+            "warn",
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 70,
+                "tabWidth": 4,
+                "comments": 70,
+                "ignoreComments": false,
+                "ignoreTrailingComments": true,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true
+            }
+        ]
+    }
+}
