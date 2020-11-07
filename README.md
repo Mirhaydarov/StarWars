@@ -1,9 +1,11 @@
 # StarWars
+![Application preview](./preview.png)
 
 ## About Project
 Project use a base data from service swapi.dev to show details information about character, planets and transport from a universe Star Wars.
 
 ## List of technologies
+- Java Script
 - React
 - Webpack
 
