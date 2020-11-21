@@ -1,5 +1,5 @@
 # StarWars
-![Application preview](./preview.png)
+## [Preview](https://mirhaydarov.github.io/swapiapi/)
 
 ## About Project
 Project use a base data from service swapi.dev to show details information about character, planets and transport from a universe Star Wars.
